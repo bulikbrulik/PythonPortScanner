@@ -87,14 +87,14 @@ for target in range(targetStart,targetEnd):
 			else:
 				try:
 					s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-					s.settimeout(3)
+					s.settimeout(10)
 					s.sendto("--Some Content to Test--", (remoteServer, port))
-					recv, svr = s.recvfrom(255)
-				except Exception, e:
-					#print(e)
+					recv, svr = s.recvfrom(1024)
+					print("\tPort " + str(port) + ":\tudp\tOpen")
+				except Exception as e:
+					print(e)
 					try: errno, errtxt = e
 					except ValueError as w:
-						#print(w)
 						print("\tPort " + str(port) + ":\tudp\tFiltered|Open")
 					else:
 						print("\tPort " + str(port) + ":\tudp\tClosed")
