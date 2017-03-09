@@ -87,7 +87,7 @@ for target in range(targetStart,targetEnd):
 			else:
 				try:
 					s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-					s.settimeout(10)
+					s.settimeout(1)
 					s.sendto("--Some Content to Test--", (remoteServer, port))
 					recv, svr = s.recvfrom(1024)
 					print("\tPort " + str(port) + ":\tudp\tOpen")
