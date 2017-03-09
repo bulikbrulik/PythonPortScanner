@@ -76,7 +76,7 @@ for target in range(targetStart,targetEnd):
 			if args.udpscan == False:
 				try:
 					s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-					s.settimeout(0.1)
+					s.settimeout(0.2)
 					s.connect((remoteServer, port))
 				except Exception:
 					print("\tPort " + str(port) + ":\ttcp\tClosed")
