@@ -8,7 +8,7 @@ from datetime import datetime
 startTime = datetime.now()
 
 #Get arguments from command line
-parser = argparse.ArgumentParser(description='Scan the specified port(s) of the indicated host(s)')
+parser = argparse.ArgumentParser(description='Scan the specified port(s) of the indicated host(s). Can scan a range of hosts and ports. Can also specify to do UDP scan instead of default TCP')
 parser.add_argument('-t', required=True, help='The target host or range of hosts to be scanned.\n May specify range or subnet mask, eg. 192.168.207.2-255 or 192.168.207.0/24)', metavar="Target")
 parser.add_argument('-p', required=True, help='The ports or range of ports to be scanned.\n Specify range as such: 100-1000', metavar="Port") 
 parser.add_argument('-sU', '--udpscan', action='store_true', help='Enable this for UDP scans. Default is TCP')
