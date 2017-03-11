@@ -2,7 +2,7 @@
 
 This project is a Python Port Scanner created for IT567. 
 
-Flags:
+Flags:<br>
   -t  Target<br>
   -p  Port<br>
   -sU UDP Scan<br>
